@@ -79,10 +79,9 @@ You can utilize whichever model you want, the list can be found at: https://gith
 
 The given training routine will save the state_dict of the model every 500 iterations.
 
-<sup>Note: I also provide a python script to scrape images from bing (using the search queries: 'totes', 'tote', 'empty tote', 'empty totes', 'box', 'boxes', 'empty box', 'empty boxes', 'container', 'containers', 'empty container', 'empty containers', 'carton', 'cartons', 'empty carton', 'empty cartons' which can be modified within the script)
+Additional Note: I also provide a python script to scrape images from bing (using the search queries: 'totes', 'tote', 'empty tote', 'empty totes', 'box', 'boxes', 'empty box', 'empty boxes', 'container', 'containers', 'empty container', 'empty containers', 'carton', 'cartons', 'empty carton', 'empty cartons' which can be modified within the script)
 To scrape images and save it with correct formatting (the dataset should be in ./Dataset/), run:
 ```
 python background_image_scraper.py
 sh background_preprocess.sh
 ```
-</sup>  
