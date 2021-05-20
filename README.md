@@ -26,19 +26,19 @@ from masked_clutterized_dataloader import masked_clutterized_datasetLoader
 data_loader = masked_clutterized_datasetLoader(dataset_location=dataset_location, device_str=device_str, input_size=input_size, object_size=object_size, batch_size=batch_size, is_norm=is_norm, norm_mean=norm_mean, norm_std=norm_std)
 ```
 * dataset_location _specifies the location of the dataset following the directory structure given above_
-* input_size _specifies the size the background image is resized to and thus, represents the size of the output image of cluttered objects
-* object_size _specifies the size the object image is resized to before being overlayed onto the background image; this size must be smaller than input_size_\
-* batch_size _specifies the number of image with cluttered objects return in a single getBatch() call.
-* is_norm _specifies whether the returned set of tensors for the images with cluttered objects are normalized using norm_mean and norm_std or not.
+* input_size _specifies the size the background image is resized to and thus, represents the size of the output image of cluttered objects_
+* object_size _specifies the size the object image is resized to before being overlayed onto the background image; this size must be smaller than input_size_
+* batch_size _specifies the number of image with cluttered objects return in a single getBatch() call._
+* is_norm _specifies whether the returned set of tensors for the images with cluttered objects are normalized using norm_mean and norm_std or not._
 
 You can get a batch of tensors containing the images, one-hot encoded labels of the objects present in the image, a list of objects in the image and the binary masks for the objects in the image using:
 ```
 img_batch, label_batch, objects_batch, masks_batch = data_loader.getBatch()
 ```
-* img_batch _contains the images with cluttered objects
-* label_batch _contains the one-hot encoded label for each image specifying which objects are present
-* objects_batch _contains the list of objects in the image
-* masks_batch _contains the binary masks for the different objects in the image arranged in the same order as the objects_batch
+* img_batch _contains the images with cluttered objects_
+* label_batch _contains the one-hot encoded label for each image specifying which objects are present_
+* objects_batch _contains the list of objects in the image_
+* masks_batch _contains the binary masks for the different objects in the image arranged in the same order as the objects_batch_
 
 You can get a detectron2 dict by using:
 ```
