@@ -10,14 +10,14 @@ Use the implementation on masked_clutterized_dataloader.py as this works directl
 Instructions on how to use the Dataloader:
 
 Dataset directory arrangement:
-
+```
 Dataset                       # Name of the dataset
 ├── Object1                   # Folder containing all the images of object 1 together with labelme annotations
 ├── Object2                   # Folder containing all the images of object 2 together with labelme annotations
 ...
 ...
 └── background                # Folder containing all the images of the background
-
+```
 You have to provide the dataset with each object in a separate folder as well as a background folder containing all the background images you want to use.
 
 Example usage:
