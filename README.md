@@ -32,7 +32,7 @@ Example usage:
 ```
 from masked_clutterized_dataloader import masked_clutterized_datasetLoader
 
-data_loader = masked_clutterized_datasetLoader(dataset_location=dataset_location, device_str=device_str, input_size=input_size, object_size=object_size, batch_size=batch_size, is_norm=is_norm, norm_mean=norm_mean, norm_std=norm_std, is_overlap=is_overlap)
+data_loader = masked_clutterized_datasetLoader(dataset_location=dataset_location, device_str=device_str, input_size=input_size, object_size=object_size, batch_size=batch_size, is_norm=is_norm, norm_mean=norm_mean, norm_std=norm_std, is_overlap=is_overlap, least_fraction=least_fraction)
 ```
 * dataset_location _specifies the location of the dataset following the directory structure given above._
 * input_size _specifies the size the background image is resized to and thus, represents the size of the output image of cluttered objects._
@@ -40,6 +40,7 @@ data_loader = masked_clutterized_datasetLoader(dataset_location=dataset_location
 * batch_size _specifies the number of image with cluttered objects return in a single getBatch() call._
 * is_norm _specifies whether the returned set of tensors for the images with cluttered objects are normalized using norm_mean and norm_std or not._
 * is_overlap _specifies whether you want the mask of objects to contain the occluded parts of the object as well._
+* least_fraction _specifies the minimum fraction of object that must be shown on the image (only works for non-overlap mode)_
 
 You can get a batch of tensors containing the images, one-hot encoded labels of the objects present in the image, a list of objects in the image and the binary masks for the objects in the image using:
 ```
