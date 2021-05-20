@@ -5,4 +5,5 @@ The midterm project report (contains both Charlie's and my results) can be found
 The final project report (contains both Charlie's and my results) can be found here: https://docs.google.com/document/d/1U4k5R0X0ijcY43Fd0yVzeveOgfMTpCDuaeY8Ao72bVU/
 
 Instructions on how to use the Dataloader:
+Use the implementation on masked_clutterized_dataloader.py as this works directly with labelme annotated images
 
