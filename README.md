@@ -24,27 +24,32 @@ Example usage:
 ```
 from masked_clutterized_dataloader import masked_clutterized_datasetLoader
 
-data_loader = masked_clutterized_datasetLoader(dataset_location=dataset_location, device_str=device_str, input_size=input_size, object_size=object_size, batch_size=batch_size, is_norm=is_norm, norm_mean=norm_mean, norm_std=norm_std)
+data_loader = masked_clutterized_datasetLoader(dataset_location=dataset_location, device_str=device_str, input_size=input_size, object_size=object_size, batch_size=batch_size, is_norm=is_norm, norm_mean=norm_mean, norm_std=norm_std, is_overlap=is_overlap)
 ```
-* dataset_location _specifies the location of the dataset following the directory structure given above_
-* input_size _specifies the size the background image is resized to and thus, represents the size of the output image of cluttered objects_
-* object_size _specifies the size the object image is resized to before being overlayed onto the background image; this size must be smaller than input_size_
+* dataset_location _specifies the location of the dataset following the directory structure given above._
+* input_size _specifies the size the background image is resized to and thus, represents the size of the output image of cluttered objects._
+* object_size _specifies the size the object image is resized to before being overlayed onto the background image; this size must be smaller than input_size._
 * batch_size _specifies the number of image with cluttered objects return in a single getBatch() call._
 * is_norm _specifies whether the returned set of tensors for the images with cluttered objects are normalized using norm_mean and norm_std or not._
+* is_overlap _specifies whether you want the mask of objects to contain the occluded parts of the object as well._
 
 You can get a batch of tensors containing the images, one-hot encoded labels of the objects present in the image, a list of objects in the image and the binary masks for the objects in the image using:
 ```
 img_batch, label_batch, objects_batch, masks_batch = data_loader.getBatch()
 ```
-* img_batch _contains the images with cluttered objects_
-* label_batch _contains the one-hot encoded label for each image specifying which objects are present_
-* objects_batch _contains the list of objects in the image_
-* masks_batch _contains the binary masks for the different objects in the image arranged in the same order as the objects_batch_
+* img_batch _contains the images with cluttered objects._
+* label_batch _contains the one-hot encoded label for each image specifying which objects are present._
+* objects_batch _contains the list of objects in the image._
+* masks_batch _contains the binary masks for the different objects in the image arranged in the same order as the objects_batch._
 
 You can get a detectron2 dict by using:
 ```
 dt2_batch = data_loader.getBatchDT2()
 ```
+Here are some examples of the images produced:
+![Overlap mode](https://github.com/Siamul/CV2_project/blob/main/sample_annot_image_dt2/15.jpg?raw=true)
+![Non-overlap mode](https://github.com/Siamul/CV2_project/blob/main/sample_annot_image_dt2_no_overlap/2.jpg?raw=true)
+
 To train a Mask RCNN model with the dataloader, run:
 ```
 python maskrcnn_trainer.py --modelYAML "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"
