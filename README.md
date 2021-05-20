@@ -50,3 +50,5 @@ To train a Mask RCNN model with the dataloader, run:
 python maskrcnn_trainer.py --modelYAML "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"
 ```
 You can utilize whichever model you want, the list can be found at: https://github.com/facebookresearch/detectron2/tree/master/configs/COCO-InstanceSegmentation
+
+The given training routine will save the state_dict of the model every 500 iterations.
