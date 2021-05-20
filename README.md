@@ -55,6 +55,7 @@ Overlap mode:
 ![Overlap mode](https://github.com/Siamul/CV2_project/blob/main/sample_annot_images_dt2/8.jpg?raw=true)
 ![Overlap mode](https://github.com/Siamul/CV2_project/blob/main/sample_annot_images_dt2/1.jpg?raw=true)
 
+
 Non-overlap mode:
 
 ![Non-overlap mode](https://github.com/Siamul/CV2_project/blob/main/sample_annot_images_dt2_no_overlap/2.jpg?raw=true)
