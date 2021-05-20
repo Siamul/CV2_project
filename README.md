@@ -5,6 +5,14 @@ The midterm project report (contains both Charlie's and my results) can be found
 
 The final project report (contains both Charlie's and my results) can be found here: https://docs.google.com/document/d/1U4k5R0X0ijcY43Fd0yVzeveOgfMTpCDuaeY8Ao72bVU/
 
+I have implemented a pytorch dataloader that returns a batch of images with cluttered objects and corresponding masks each time getBatch() is called. It has three different implementations: i) sequentially on CPU ii) multi-processing on CPU (using multiprocessing.pool in python) and iii) utilizing torch with gpu.
+
+The comparison of the three versions is given below:
+```
+Time taken for processing sequentially using CPU (1 core of Intel Xeon 2.2 GHz):  14.1540949 s
+Time taken for processing parallely using CPU (12 cores of Intel Xeon 2.2 GHz):  6.8344337 s
+Time taken for processing using GPU (1 GTX 1080 Ti):  3.7211416 s
+```
 Use the implementation on masked_clutterized_dataloader.py as this works directly with labelme annotated images. The initial implementation uses cropped out images to create the cluttered object images however, there is a problem in using this approach if the color used to fill the cropped out background matches the color of the object (my mug was black and some of the pixels inside the cup where getting replaced by the background pixel).
 
 Instructions on how to use the Dataloader:
