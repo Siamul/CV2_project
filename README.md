@@ -54,7 +54,7 @@ You can get a detectron2 dict by using:
 ```
 dt2_batch = data_loader.getBatchDT2()
 ```
-Here are some examples of the images produced:
+Here are some examples of the images produced (images were visualized using the Detectron2 Visualizer module):
 
 Overlap mode:
 
